@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+  <title>Projekte – Maximilian Locke, IT Freelancer</title>
+  <meta name="description" content="Über 20 Open-Source-Projekte mit Technologien und Links: Server-Automatisierung, WireGuard-Netzwerke, VPN-Kill-Switch, Container, Web-Apps, Webseiten und Icon-Design.">
+  <link rel="canonical" href="https://derlocke-ng.github.io/freelancing/projekte.html">
+  <meta name="theme-color" content="#0b0e13" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Maximilian Locke – IT Freelancer">
+  <meta property="og:title" content="Projekte – Maximilian Locke, IT Freelancer">
+  <meta property="og:description" content="Server-Automatisierung, Netzwerke &amp; VPN, Container, Web-Apps und Icon-Design – alle Projekte mit eingesetzten Technologien.">
+  <meta property="og:url" content="https://derlocke-ng.github.io/freelancing/projekte.html">
+  <meta property="og:image" content="https://derlocke-ng.github.io/freelancing/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Maximilian Locke – IT Freelancer, zur Startseite">
+        <img class="brand-mark" src="assets/img/logo.svg" alt="" width="36" height="36">
+        <span class="brand-text">
+          <span class="brand-name">Maximilian Locke</span>
+          <span class="brand-sub">IT Freelancer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="./#leistungen">Leistungen</a></li>
+          <li><a href="./#hosting">Hosting</a></li>
+          <li><a href="projekte.html" aria-current="page">Projekte</a></li>
+          <li><a href="./#stack">Tech-Stack</a></li>
+          <li><a href="./#ablauf">Ablauf</a></li>
+          <li><a href="./#ueber-mich">Über mich</a></li>
+          <li><a href="./#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn js-theme" type="button" aria-label="Farbschema wechseln">
+          <svg class="i-stroke theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+          <svg class="i-stroke theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7Z"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm header-cta" href="./#kontakt">Projekt anfragen</a>
+        <button class="icon-btn menu-btn js-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+          <svg class="i-stroke i-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="i-stroke i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="breadcrumb"><a href="./">Startseite</a> / Projekte</p>
+        <p class="eyebrow">Projekte</p>
+        <h1 id="page-title">Projektübersicht</h1>
+        <p>Alle öffentlichen Projekte mit den eingesetzten Technologien. Der Quellcode liegt jeweils auf <a href="https://github.com/derlocke-ng">GitHub</a> – Sie können sich also selbst ein Bild von meiner Arbeit machen: Code, Dokumentation, Tests und Entwicklungsverlauf.</p>
+      </div>
+    </section>
+
+    <section class="section section--flush" aria-label="Projekte" id="projekte">
+      <div class="container">
+        <div class="filters js-filters" role="group" aria-label="Projekte filtern">
+          <button class="filter-btn" type="button" data-filter="alle" aria-pressed="true">Alle<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="server" aria-pressed="false">Server &amp; Infrastruktur<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="network" aria-pressed="false">Netzwerk &amp; Sicherheit<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="container" aria-pressed="false">Container<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automatisierung &amp; Tools<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web &amp; Apps<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="design" aria-pressed="false">Design &amp; Icons<span class="count"></span></button>
+          <button class="filter-btn" type="button" data-filter="desktop" aria-pressed="false">Linux-Desktop<span class="count"></span></button>
+        </div>
+        <p class="result-count js-result-count" aria-live="polite"></p>
+
+        <div class="project-grid">
+          <!-- kiwi-server -->
+          <article class="card project js-project reveal" id="kiwi-server" data-cat="server network automation">
+            <div class="project-media project-media--icon tile-server">
+              <img src="assets/img/kiwi/kiwi-server.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Server · Netzwerk</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-server</h3>
+              <p>Baut die Maschinen eines Kiwi Networks: Aus einer <code>fleet.yaml</code> entstehen pro Host ein Rollen-Skript, eine Ignition- oder Preseed-Konfiguration und ein ISO, das sich unbeaufsichtigt installiert. Rollen für VPN-Zugangspunkt, LAN-Gateway und Cloud-Knoten; CLI und GTK4-App.</p>
+              <ul class="chips"><li>Python</li><li>Jinja2</li><li>Bash</li><li>Butane / Ignition</li><li>Preseed</li><li>Docker Compose</li><li>WireGuard</li><li>GTK4</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-server">Quellcode</a><a href="https://kiwi-network.eu/docs/server/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-killswitch -->
+          <article class="card project js-project reveal" id="kiwi-killswitch" data-cat="network desktop">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/kiwi-killswitch.webp" alt="GTK4-Oberfläche von kiwi-killswitch mit Schutzstatus und Schutzstufen" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Netzwerk · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-killswitch</h3>
+              <p>Fail-closed VPN-Kill-Switch für GNOME auf Fedora Silverblue und Bluefin: ein Root-Dienst mit nftables-Regeln für IPv4 und IPv6, gesteuert über Quick Settings, GTK4-App oder CLI – ohne Passwortabfrage. Mit DNS-Leckschutz und drei Schutzstufen.</p>
+              <ul class="chips"><li>Python</li><li>nftables</li><li>D-Bus</li><li>systemd</li><li>NetworkManager</li><li>GNOME Shell</li><li>GTK4</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-killswitch">Quellcode</a><a href="https://kiwi-network.eu/docs/apps/kiwi-killswitch/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <!-- derlocke.net -->
+          <article class="card project js-project reveal" id="derlocke-net" data-cat="web design">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/derlocke-blog.webp" alt="Startseite von derlocke.net im Terminal-Look" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web · Design</span><span class="status status--active">Aktiv</span></div>
+              <h3>derlocke.net <small>Kiwi Blog 2</small></h3>
+              <p>Mein Blog auf Basis von Kiwi Blog 2, einem eigenen Static-Site-Generator mit Admin-Oberfläche im Browser: schreiben, als Git-Commit speichern, automatisch veröffentlichen. Rund 7&nbsp;KB CSS und 3&nbsp;KB JavaScript, Volltextsuche, RSS und Dark Mode.</p>
+              <ul class="chips"><li>Node.js</li><li>JavaScript</li><li>Markdown</li><li>GitHub API</li><li>Web Crypto</li><li>GitHub Actions</li></ul>
+              <div class="project-links"><a href="https://derlocke.net">Live ansehen</a><a href="https://github.com/derlocke-ng/derlocke-blog">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-gen -->
+          <article class="card project js-project reveal" id="kiwi-gen" data-cat="web network">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/kiwi-gen.webp" alt="Kiwi Key Generator mit Registern für Tresor, SSH-Schlüssel und Zertifikate" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web · Sicherheit</span><span class="status status--active">Aktiv</span></div>
+              <h3>Kiwi Key Generator</h3>
+              <p>SSH-Schlüssel, SSH-Zertifikate und eine eigene TLS-Zertifizierungsstelle direkt im Browser erstellen und in einem verschlüsselten Tresor verwalten. Alle Formate (OpenSSH, X.509, PKCS) ohne Abhängigkeiten implementiert – nichts verlässt die Seite.</p>
+              <ul class="chips"><li>JavaScript</li><li>Web Crypto API</li><li>X.509</li><li>OpenSSH</li><li>CSP</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/kiwi-gen/">Live-Demo</a><a href="https://github.com/derlocke-ng/kiwi-gen">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-icons -->
+          <article class="card project js-project reveal" id="kiwi-icons" data-cat="design web">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/kiwi-icons.webp" alt="Vorschauseite der Kiwi-Icons mit farbigen Kiwi-Querschnitten" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Design · Icons</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-icons</h3>
+              <p>Einheitliches Icon-Set für alle Kiwi-Apps: 13 Icons in drei Stilen als SVG, PNG-Exporte in sieben Größen per Skript, Farbpaletten als CSS und JSON sowie eine Vorschauseite mit Stil- und Theme-Umschalter.</p>
+              <ul class="chips"><li>SVG</li><li>Icon-Design</li><li>Farbpaletten</li><li>Bash</li><li>rsvg-convert</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/kiwi-icons/">Vorschau</a><a href="https://github.com/derlocke-ng/kiwi-icons">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-network.eu -->
+          <article class="card project js-project reveal" id="kiwi-network" data-cat="web design">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/kiwi-network.webp" alt="Startseite von kiwi-network.eu" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web · Dokumentation</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-network.eu</h3>
+              <p>Website und Dokumentation des Kiwi Networks: Startseite in reinem HTML, CSS und JavaScript – ohne Build-Schritt und ohne Anfragen an Drittanbieter –, Dokumentation mit MkDocs Material, automatisch veröffentlicht per GitHub Actions.</p>
+              <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>MkDocs Material</li><li>GitHub Actions</li><li>GitHub Pages</li></ul>
+              <div class="project-links"><a href="https://kiwi-network.eu">Website</a><a href="https://github.com/derlocke-ng/kiwi-network">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-fox -->
+          <article class="card project js-project reveal" id="kiwi-fox" data-cat="container network desktop">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/kiwi-fox.webp" alt="Kiwi-Fox: Profilliste und Dialog zum Anlegen eines neuen Profils" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Container · Netzwerk</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-fox</h3>
+              <p>Isolierte Browser-Profile in rootless Podman: Jedes Profil hat eigenen Speicher, eigenen Proxy-Ausgang, eigenen DNS-Resolver mit Werbefilter und einen festen Fingerprint. Ein Gateway-Container mit nftables-Default-Drop ist der einzige Weg nach draußen – fällt er aus, gibt es keine Route.</p>
+              <ul class="chips"><li>Python 3.12</li><li>Pydantic</li><li>Podman (rootless)</li><li>nftables</li><li>SOCKS5</li><li>GTK4</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-fox">Quellcode</a><a href="https://kiwi-network.eu/docs/apps/kiwi-fox/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-updater -->
+          <article class="card project js-project reveal" id="kiwi-updater" data-cat="automation desktop">
+            <div class="project-media project-media--icon tile-updater">
+              <img src="assets/img/kiwi/kiwi-updater.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Automatisierung · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-updater <small>&amp; kiwi-catalog</small></h3>
+              <p>Installiert und aktualisiert Open-Source-Apps aus Git-Katalogen auf Fedora Silverblue und Bluefin. Releases sind Git-Tags, Updates laufen per systemd-Timer im Hintergrund, Root-Anteile über einen polkit-geschützten Helfer – mit CLI und der GTK4-App „Kiwi Apps“.</p>
+              <ul class="chips"><li>Bash</li><li>Git</li><li>systemd</li><li>polkit</li><li>Python</li><li>GTK4</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-updater">Quellcode</a><a href="https://github.com/derlocke-ng/kiwi-catalog">Katalog</a><a href="https://kiwi-network.eu/docs/desktop/kiwi-updater/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <!-- ensconce -->
+          <article class="card project js-project reveal" id="ensconce" data-cat="automation desktop">
+            <div class="project-media project-media--icon tile-ensconce">
+              <img src="assets/img/kiwi/ensconce.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Automatisierung · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <h3>ensconce</h3>
+              <p>Modulare Nachinstallation für Bluefin-DX: macht aus einer frischen Installation per Textlisten einen fertigen Arbeitsplatz – Pakete, Flatpaks, GNOME-Erweiterungen, Nextcloud-Sync, dconf, Anmeldebildschirm. Mit Probelauf, Fortsetzen nach Neustart und Export eines bestehenden Rechners.</p>
+              <ul class="chips"><li>Bash</li><li>rpm-ostree</li><li>Flatpak</li><li>dconf</li><li>GNOME</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/ensconce">Quellcode</a><a href="https://kiwi-network.eu/docs/desktop/ensconce/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-fox providers -->
+          <article class="card project js-project reveal" id="kiwi-fox-provider" data-cat="container network">
+            <div class="project-media project-media--icon tile-plugin">
+              <img src="assets/img/kiwi/kiwi-plugin.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Container · Netzwerk</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-fox Provider-Module</h3>
+              <p>Vier austauschbare Ausgänge für kiwi-fox als eigenständige Container-Module: Tor mit eigenem Circuit pro Profil, VPN über gluetun, 9proxy und Mysterium. Jedes Modul spricht ausschließlich SOCKS5 und ist mit Unit-Tests abgesichert.</p>
+              <ul class="chips"><li>Python</li><li>Podman</li><li>Tor</li><li>gluetun</li><li>SOCKS5</li><li>pytest</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-plugin-tor">Tor</a><a href="https://github.com/derlocke-ng/kiwi-plugin-vpn">VPN</a><a href="https://github.com/derlocke-ng/kiwi-plugin-9proxy">9proxy</a><a href="https://github.com/derlocke-ng/kiwi-plugin-myst">Mysterium</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-cli-tools-desktop -->
+          <article class="card project js-project reveal" id="kiwi-cli-tools" data-cat="automation desktop">
+            <div class="project-media project-media--icon tile-cli">
+              <img src="assets/img/kiwi/kiwi-cli-tools-desktop.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Tools · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-cli-tools-desktop</h3>
+              <p>Drei kleine Helfer für die Kommandozeile: <code>pweb</code> teilt einen Ordner per HTTPS im LAN, <code>select-server</code> verbindet per Menü mit Hosts aus der SSH-Konfiguration, <code>tethering</code> setzt die TTL für Hotspot-Verkehr.</p>
+              <ul class="chips"><li>Python</li><li>Bash</li><li>OpenSSL</li><li>SSH</li><li>iptables</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-cli-tools-desktop">Quellcode</a><a href="https://kiwi-network.eu/docs/apps/cli-tools/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <!-- mullvad-socks5 -->
+          <article class="card project js-project reveal" id="mullvad-socks5" data-cat="automation network">
+            <div class="project-media project-media--icon tile-green">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.6h-3.6M5.5 20.5v-3.6h3.6"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Automatisierung · Netzwerk</span><span class="status status--active">Aktiv</span></div>
+              <h3>mullvad-socks5</h3>
+              <p>Aktuelle Listen aller SOCKS5-Proxys im Mullvad-Netz, alle sechs Stunden per GitHub Actions neu erzeugt: Importe für FoxyProxy, eine Tabelle mit Ländern und Städten sowie DNS-Einträge für Pi-hole und kiwi-server – gebaut ohne VPN und ohne Secrets.</p>
+              <ul class="chips"><li>Python</li><li>GitHub Actions</li><li>DNS</li><li>Pi-hole</li><li>JSON</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/mullvad-socks5">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- tangpod -->
+          <article class="card project js-project reveal" id="tangpod" data-cat="container server network">
+            <div class="project-media project-media--icon tile-amber">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Container · Sicherheit</span><span class="status status--done">Fertig</span></div>
+              <h3>tangpod</h3>
+              <p>Containerisierter Tang-Server für netzwerkgebundene Festplattenverschlüsselung (NBDE) mit Clevis und LUKS. Ein Verwaltungsskript für Build, Start, Logs, Backup und Wiederherstellung der Schlüssel; rootless, SELinux-kompatibel, Multi-Arch-Images mit Trivy-Scan in der CI.</p>
+              <ul class="chips"><li>Podman</li><li>Docker</li><li>Bash</li><li>LUKS / Clevis</li><li>GitHub Actions</li><li>Trivy</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/tangpod">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- 9proxy-pod -->
+          <article class="card project js-project reveal" id="pod-9proxy" data-cat="container">
+            <div class="project-media project-media--icon tile-blue">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.2v9.6L12 21l8-4.2V7.2L12 3Z"/><path d="M4 7.2 12 11.4l8-4.2M12 11.4V21"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Container</span><span class="status status--done">Fertig</span></div>
+              <h3>9proxy-pod</h3>
+              <p>Container-Image auf Fedora-Basis mit dem 9proxy-Client und SSH-Zugang, betrieben als Nicht-Root-Benutzer. Wird per GitHub Actions regelmäßig neu gebaut und in der GitHub Container Registry veröffentlicht.</p>
+              <ul class="chips"><li>Podman / Docker</li><li>Fedora</li><li>SSH</li><li>GitHub Actions</li><li>GHCR</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/9proxy-pod">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- awesome-linux -->
+          <article class="card project js-project reveal" id="awesome-linux" data-cat="automation server">
+            <div class="project-media project-media--icon tile-violet">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="m7 9.5 3 2.5-3 2.5M13 15h4"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Automatisierung · Server</span><span class="status status--done">Fertig</span></div>
+              <h3>awesome-linux</h3>
+              <p>Sammlung von Bash- und Python-Skripten für den Admin-Alltag auf Debian und Fedora: statische IP setzen, SSH-Schlüssel samt dropbear-initramfs tauschen, LUKS-verschlüsselte Laufwerke anlegen, Ordner per YAML-Konfiguration synchronisieren, SSH-Schlüssel und Zertifikate erzeugen.</p>
+              <ul class="chips"><li>Bash</li><li>Python</li><li>LUKS</li><li>SSH</li><li>systemd</li><li>YAML</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/awesome-linux">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- EnigmaJS -->
+          <article class="card project js-project reveal" id="enigmajs" data-cat="web design">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/enigmajs.webp" alt="EnigmaJS: Startbildschirm des verschlüsselten Chats" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web-App · P2P</span><span class="status status--done">Fertig</span></div>
+              <h3>EnigmaJS</h3>
+              <p>Verschlüsselter, flüchtiger Gruppenchat ohne Konten: Räume per Code oder QR-Code, optional mit Passwort, Host-Rechte und Ende-zu-Ende-Verschlüsselung mit frischen Schlüsseln pro Raum. Dezentral über Gun.js-Relays – wird der Raum geschlossen, ist alles weg.</p>
+              <ul class="chips"><li>Vue 3</li><li>Pinia</li><li>Vite</li><li>Gun.js / SEA</li><li>JavaScript</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/EnigmaJS/">Live ansehen</a><a href="https://github.com/derlocke-ng/EnigmaJS">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- DevBoard -->
+          <article class="card project js-project reveal" id="devboard" data-cat="web">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/devboard.webp" alt="DevBoard: Formular zum Veröffentlichen einer Notiz" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web-App · P2P</span><span class="status status--done">Fertig</span></div>
+              <h3>DevBoard</h3>
+              <p>Serverloses Peer-to-Peer-Board für Freelancer: Beiträge und Stimmen werden im Browser mit einem eigenen Schlüsselpaar signiert und von allen Teilnehmern geprüft. Keine Konten, keine Datenbank – eine einzige HTML-Datei.</p>
+              <ul class="chips"><li>JavaScript</li><li>Gun.js / SEA</li><li>IndexedDB</li><li>GitHub Pages</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/devboard/">Live ansehen</a><a href="https://github.com/derlocke-ng/devboard">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- pongjs -->
+          <article class="card project js-project reveal" id="pongjs" data-cat="web">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/pongjs.webp" alt="pongjs: Startmenü im grünen Retro-Look" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web · Spiel</span><span class="status status--done">Fertig</span></div>
+              <h3>pongjs</h3>
+              <p>Pong für zwei Spieler über das Netzwerk, direkt im Browser: Verbindung per WebRTC – automatisch über PeerJS oder manuell –, gezeichnet auf Canvas im Retro-Look eines Röhrenmonitors.</p>
+              <ul class="chips"><li>JavaScript</li><li>WebRTC</li><li>PeerJS</li><li>Canvas</li><li>CSS</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/pongjs">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- Kiwi Blog -->
+          <article class="card project js-project reveal" id="kiwi-blog" data-cat="web automation design">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/kiwi-blog.webp" alt="Kiwi Blog: Demo-Seite mit Farbschema-Reglern" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web · Generator</span><span class="status status--done">Fertig</span></div>
+              <h3>Kiwi Blog</h3>
+              <p>Schlanker Static-Site-Generator in Bash: Markdown rein, fertige Website raus – mit Endlos-Scrollen durch die Beiträge, Archiv, eigenen Seiten per Namenskonvention und frei einstellbarem Farbschema. Vorgänger von Kiwi Blog 2.</p>
+              <ul class="chips"><li>Bash</li><li>Markdown</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/kiwi-blog/">Live-Demo</a><a href="https://github.com/derlocke-ng/kiwi-blog">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-pentesting -->
+          <article class="card project js-project reveal" id="kiwi-pentesting" data-cat="network container">
+            <div class="project-media project-media--icon tile-pentest">
+              <img src="assets/img/kiwi/kiwi-pentesting.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Sicherheit · Container</span><span class="status status--wip">In Entwicklung</span></div>
+              <h3>kiwi-pentesting</h3>
+              <p>Werkzeugsammlung für autorisierte Sicherheitstests auf Basis von kiwi-fox: Jedes Tool läuft als Container im Netzwerk-Namespace einer kiwi-fox-Identität und nutzt denselben Ausgang. Tools sind nach Risiko in Stufen eingeteilt; bisher stehen Kernbibliothek, Katalog und Sicherheitsregeln.</p>
+              <ul class="chips"><li>Python</li><li>Podman</li><li>nftables</li><li>pytest</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-pentesting">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-cloud -->
+          <article class="card project js-project reveal" id="kiwi-cloud" data-cat="container server">
+            <div class="project-media project-media--icon tile-cloud">
+              <img src="assets/img/kiwi/kiwi-cloud.svg" alt="" width="92" height="92" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Container · Server</span><span class="status status--archive">Abgelöst</span></div>
+              <h3>kiwi-cloud</h3>
+              <p>Die erste Version des Cloud-Knotens (2025) als Docker-Compose-Stack: Nextcloud AIO und Vaultwarden hinter nginx, ausgehender Verkehr über einen gluetun-VPN-Container. Heute als Module in kiwi-server aufgegangen.</p>
+              <ul class="chips"><li>Docker Compose</li><li>Nextcloud AIO</li><li>Vaultwarden</li><li>nginx</li><li>gluetun</li><li>WireGuard</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-cloud">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- kiwi-vpn-monitor -->
+          <article class="card project js-project reveal" id="kiwi-vpn-monitor" data-cat="network desktop">
+            <div class="project-media project-media--icon tile-rose">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7.5 4 15 3-7.5h4"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Netzwerk · Desktop</span><span class="status status--archive">Abgelöst</span></div>
+              <h3>kiwi-vpn-monitor</h3>
+              <p>GNOME-Shell-Erweiterung, die Gateway und DNS überwacht und bei Bedarf automatisch die passende WireGuard-Verbindung aktiviert – mit optionalem iptables-Kill-Switch. Vorläufer von kiwi-killswitch.</p>
+              <ul class="chips"><li>JavaScript (GJS)</li><li>GNOME Shell</li><li>NetworkManager</li><li>WireGuard</li><li>iptables</li><li>Bash</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-vpn-monitor">Quellcode</a></div>
+            </div>
+          </article>
+
+          <!-- Weitere / nicht öffentliche Arbeiten -->
+          <aside class="card more-card reveal" aria-labelledby="more-title">
+            <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5v-9Z"/></svg></span>
+            <h2 id="more-title">Und noch mehr</h2>
+            <p>Manche Arbeiten sind nicht öffentlich – Kundenprojekte, ältere Webseiten und interne Werkzeuge. Gern zeige ich Ihnen im Gespräch passende Beispiele für Ihr Vorhaben.</p>
+            <p><a class="link-arrow" href="./#kontakt">Gespräch vereinbaren <svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./" aria-label="Maximilian Locke – IT Freelancer, zur Startseite">
+          <img class="brand-mark" src="assets/img/logo.svg" alt="" width="36" height="36">
+          <span class="brand-text"><span class="brand-name">Maximilian Locke</span><span class="brand-sub">IT Freelancer</span></span>
+        </a>
+        <p>Linux-Server, Netzwerke &amp; VPN, Automatisierung, Webdesign, Icons und Hosting – eingerichtet und betreut.</p>
+      </div>
+      <nav aria-labelledby="f-nav-seiten">
+        <h2 class="footer-title" id="f-nav-seiten">Seiten</h2>
+        <ul class="footer-links">
+          <li><a href="./#leistungen">Leistungen</a></li>
+          <li><a href="./#hosting">Hosting</a></li>
+          <li><a href="projekte.html">Projekte</a></li>
+          <li><a href="./#stack">Tech-Stack</a></li>
+          <li><a href="./#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-nav-recht">
+        <h2 class="footer-title" id="f-nav-recht">Rechtliches</h2>
+        <ul class="footer-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-nav-online">
+        <h2 class="footer-title" id="f-nav-online">Online</h2>
+        <ul class="footer-links">
+          <li><a href="https://github.com/derlocke-ng">GitHub</a></li>
+          <li><a href="https://kiwi-network.eu">Kiwi Network</a></li>
+          <li><a href="https://derlocke.net">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span class="js-year">2026</span> Maximilian Locke – IT Freelancer</p>
+      <p>Keine Cookies, kein Tracking, keine Inhalte von Drittanbietern.</p>
+    </div>
+  </footer>
+</body>
+</html>
