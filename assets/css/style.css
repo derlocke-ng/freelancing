@@ -742,11 +742,6 @@ code, kbd, samp { font-family: var(--font-mono); font-size: .9em; }
   color: var(--text-2);
   font: 500 .76rem/1.25 var(--font-mono);
 }
-.chips .is-core {
-  border-color: var(--accent-line);
-  background: var(--accent-soft);
-  color: var(--text);
-}
 
 /* Leistungen */
 .service { display: flex; flex-direction: column; }
@@ -923,31 +918,19 @@ code, kbd, samp { font-family: var(--font-mono); font-size: .9em; }
 .mini span { display: block; color: var(--muted); font-size: .84rem; line-height: 1.4; }
 .center-cta { display: flex; justify-content: center; margin-top: 32px; }
 
-/* Tech-Stack */
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  margin: -18px 0 28px;
-  color: var(--muted);
-  font-size: .86rem;
+/* Tech-Stack: schlichte Liste – Bereich, Werkzeuge, wofür eingesetzt */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr));
+  column-gap: 56px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.legend span { display: inline-flex; align-items: center; gap: 8px; }
-.legend .chip {
-  padding: 3px 8px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--surface-2);
-  color: var(--text-2);
-  font: 500 .76rem/1.25 var(--font-mono);
-}
-.legend .chip.is-core { border-color: var(--accent-line); background: var(--accent-soft); color: var(--text); }
-.stack-group { padding: 24px; }
-.stack-group h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 6px; font-size: 1.04rem; }
-.stack-group h3 .icon-tile { width: 36px; height: 36px; border-radius: 10px; }
-.stack-group h3 .icon-tile svg { width: 19px; height: 19px; }
-.stack-group > p { margin: 0 0 16px; color: var(--muted); font-size: .9rem; }
-.stack-group--focus { border-color: var(--accent-line); }
+.skill { padding: 20px 0 24px; border-top: 1px solid var(--line); }
+.skill h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0 0 8px; font-size: 1.06rem; }
+.skill-tools { margin: 0 0 6px; color: var(--text); font: 500 .85rem/1.6 var(--font-mono); }
+.skill-use { margin: 0; color: var(--text-2); font-size: .95rem; }
 
 /* Arbeitsweise */
 .principles { display: grid; gap: clamp(26px, 3vw, 36px) 32px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }

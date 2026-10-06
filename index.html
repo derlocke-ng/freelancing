@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
   <title>Maximilian Locke – IT Freelancer für Linux, Netzwerke &amp; Webdesign</title>
-  <meta name="description" content="IT-Freelancer für Linux-Server (Debian, Fedora CoreOS), Netzwerke &amp; VPN (WireGuard, OpenVPN), Automatisierung mit Bash &amp; Python, Docker &amp; Podman, Webdesign, Icon-Design und betreutes Hosting. Kleine Projekte, langfristige Betreuung.">
+  <meta name="description" content="IT-Freelancer für Linux-Server (Debian, Fedora CoreOS), Netzwerke &amp; VPN (WireGuard, OpenVPN, SoftEther), Webserver &amp; Datenbanken, WordPress, Automatisierung mit Bash &amp; Python, Container, Webseiten, Icons und betreutes Hosting.">
   <link rel="canonical" href="https://derlocke-ng.github.io/freelancing/">
   <meta name="theme-color" content="#0b0e13" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
@@ -13,7 +13,7 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Maximilian Locke – IT Freelancer">
   <meta property="og:title" content="Maximilian Locke – IT Freelancer für Linux, Netzwerke &amp; Webdesign">
-  <meta property="og:description" content="Linux-Server einrichten, betreuen und automatisieren, sichere Netzwerke und VPNs, Webdesign, Icons und Hosting – mit über 25 Open-Source-Projekten als Referenz.">
+  <meta property="og:description" content="Linux-Server einrichten und betreuen, Netzwerke und VPNs, Webserver und Datenbanken, Webseiten, Icons und Hosting – mit über 25 Open-Source-Projekten als Referenz.">
   <meta property="og:url" content="https://derlocke-ng.github.io/freelancing/">
   <meta property="og:image" content="https://derlocke-ng.github.io/freelancing/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -33,9 +33,9 @@
     "name": "Maximilian Locke – IT Freelancer",
     "url": "https://derlocke-ng.github.io/freelancing/",
     "image": "https://derlocke-ng.github.io/freelancing/assets/img/og-image.png",
-    "description": "IT-Freelancer für Linux-Server, Netzwerke & VPN, Automatisierung mit Bash und Python, Container, Webdesign, Icon-Design und betreutes Hosting.",
+    "description": "IT-Freelancer für Linux-Server, Netzwerke & VPN, Webserver & Datenbanken, Automatisierung mit Bash und Python, Container, Webseiten, Icons und betreutes Hosting.",
     "areaServed": { "@type": "Country", "name": "Deutschland" },
-    "knowsAbout": ["Linux", "Debian", "Fedora CoreOS", "WireGuard", "OpenVPN", "Docker", "Podman", "Bash", "Python", "Netzwerke", "Webdesign", "Icon-Design", "Hosting"],
+    "knowsAbout": ["Linux", "Debian", "Fedora CoreOS", "Proxmox VE", "WireGuard", "OpenVPN", "SoftEther VPN", "nftables", "Pi-hole", "Apache", "nginx", "PHP", "WordPress", "MariaDB", "MySQL", "PostgreSQL", "SQLite", "Docker", "Podman", "Nextcloud", "Matrix", "XMPP", "Bash", "Python", "JavaScript", "Webdesign", "Icon-Design", "Hosting"],
     "founder": {
       "@type": "Person",
       "name": "Maximilian Locke",
@@ -93,8 +93,8 @@
           <h1 id="hero-title">Server, die laufen.<br><span class="grad">Netzwerke, die sicher sind.</span></h1>
           <p class="lede">
             Ich bin Maximilian Locke, IT-Freelancer mit Schwerpunkt <strong>Linux</strong> und <strong>Netzwerke</strong>.
-            Ich richte Ihre Server ein, automatisiere Routinearbeit mit Bash und Python, baue sichere VPN-Verbindungen,
-            gestalte moderne Webseiten und Icons – und bleibe danach Ihr fester Ansprechpartner.
+            Ich richte Server ein und betreue sie, baue VPNs, automatisiere wiederkehrende Aufgaben mit Bash und Python
+            und erstelle Webseiten und Icons – auf Wunsch mit Betreuung über das Projekt hinaus.
           </p>
           <div class="cta-row">
             <a class="btn btn--primary btn--lg" href="#kontakt">
@@ -150,7 +150,7 @@
       <div class="container stats-grid">
         <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Open-Source-Projekte, öffentlich auf GitHub</span></div>
         <div class="stat"><span class="stat-num">3</span><span class="stat-label">Server-Plattformen vollautomatisch installiert: Fedora CoreOS, uCore, Debian</span></div>
-        <div class="stat"><span class="stat-num">1 Datei</span><span class="stat-label">beschreibt eine ganze Server-Flotte – mit meinem Tool kiwi-server</span></div>
+        <div class="stat"><span class="stat-num">1 Datei</span><span class="stat-label">reicht kiwi-server, um Installationsmedien für alle Server eines Netzes zu bauen</span></div>
         <div class="stat"><span class="stat-num">0</span><span class="stat-label">Cookies, Tracker und Drittanbieter auf dieser Website</span></div>
       </div>
     </section>
@@ -160,99 +160,82 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Leistungen</p>
-          <h2 id="leistungen-title">Was ich für Sie übernehme</h2>
-          <p>Von der Einrichtung bis zur laufenden Wartung: Ich kümmere mich um Ihre IT, als wäre es meine eigene. Mein Spezialgebiet sind Linux und Netzwerke – dazu kommen Automatisierung, Container, Webentwicklung und Design.</p>
+          <h2 id="leistungen-title">Was ich anbiete</h2>
+          <p>Schwerpunkt sind Linux-Server und Netzwerke. Dazu kommen Webserver und Datenbanken, Automatisierung, Container, Webseiten und Icons – als einzelner Auftrag oder mit laufender Betreuung.</p>
         </header>
 
         <div class="grid grid--3">
           <article class="card card--lift service service--focus reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg></span>
-              <span class="badge">Spezialgebiet</span>
+              <span class="badge">Schwerpunkt</span>
             </div>
-            <h3>Linux-Server einrichten &amp; betreuen</h3>
-            <p>Installation, Härtung und laufende Pflege Ihrer Server – vom kleinen vServer bis zum Server im Büro. Automatische Updates mit festem Wartungsfenster, Überwachung und schnelle Hilfe, wenn etwas klemmt.</p>
-            <ul class="chips"><li>Debian</li><li>Fedora CoreOS</li><li>uCore</li><li>Proxmox VE</li><li>systemd</li></ul>
+            <h3>Linux-Server</h3>
+            <p>Einrichtung und Pflege von Servern mit Debian oder Fedora CoreOS: Installation, Absicherung, Updates, Backups, Fehlersuche. Bestehende Server übernehme ich ebenfalls.</p>
           </article>
-
           <article class="card card--lift service service--focus reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.6 17M12 11.5l5.4 5.5"/></svg></span>
-              <span class="badge">Spezialgebiet</span>
+              <span class="badge">Schwerpunkt</span>
             </div>
-            <h3>Netzwerke, VPN &amp; Firewall</h3>
-            <p>Sichere Verbindungen zwischen Standorten, Homeoffice und Servern: Fernzugriff per VPN, eigenes DNS mit Werbe- und Trackerfilter, saubere Firewall-Regeln und interne Zertifikate ohne Browser-Warnungen.</p>
-            <ul class="chips"><li>WireGuard</li><li>OpenVPN</li><li>Pi-hole</li><li>nftables</li><li>OpenWrt</li></ul>
+            <h3>Netzwerke und VPN</h3>
+            <p>Fernzugriff und Verbindungen zwischen Standorten mit WireGuard, OpenVPN oder SoftEther, Firewall-Regeln, eigenes DNS mit Werbefilter, interne Zertifikate.</p>
           </article>
-
+          <article class="card card--lift service reveal">
+            <div class="service-top">
+              <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.5M4.5 12v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V12"/></svg></span>
+            </div>
+            <h3>Webserver und Datenbanken</h3>
+            <p>Apache (auch mit php-cgi) und nginx, PHP-Anwendungen und WordPress, Datenbanken mit MariaDB/MySQL, PostgreSQL oder SQLite.</p>
+          </article>
           <article class="card card--lift service reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="m7 9.5 3 2.5-3 2.5M13 15h4"/></svg></span>
             </div>
-            <h3>Automatisierung mit Bash &amp; Python</h3>
-            <p>Was regelmäßig von Hand passiert, wird zum Skript: Backups, Deployments, Server-Installationen, Berichte. Reproduzierbar, dokumentiert und versioniert in Git.</p>
-            <ul class="chips"><li>Bash</li><li>Python</li><li>systemd-Timer</li><li>Ignition</li><li>GitHub Actions</li></ul>
+            <h3>Automatisierung</h3>
+            <p>Wiederkehrende Aufgaben als Bash- oder Python-Skript, zeitgesteuert per systemd-Timer: Backups, Updates, Installationen, Auswertungen.</p>
           </article>
-
           <article class="card card--lift service reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.2v9.6L12 21l8-4.2V7.2L12 3Z"/><path d="M4 7.2 12 11.4l8-4.2M12 11.4V21"/></svg></span>
             </div>
-            <h3>Container &amp; Self-Hosting</h3>
-            <p>Anwendungen sauber getrennt in Containern betreiben: Nextcloud, Passwort-Manager, interne Werkzeuge oder Ihre eigene App – mit Reverse Proxy, HTTPS und regelmäßigen Updates.</p>
-            <ul class="chips"><li>Docker</li><li>Podman (rootless)</li><li>Compose</li><li>nginx</li></ul>
+            <h3>Container und Self-Hosting</h3>
+            <p>Dienste wie Nextcloud, Vaultwarden oder einen Chat-Server (Matrix, XMPP) einrichten und betreiben – in Containern mit Docker oder Podman, hinter einem Reverse Proxy mit HTTPS.</p>
           </article>
-
           <article class="card card--lift service reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.2c0 4.4 2.9 8.2 7 9.8 4.1-1.6 7-5.4 7-9.8V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
             </div>
-            <h3>Sicherheit &amp; Datenschutz</h3>
-            <p>Härtung von Servern und Arbeitsplätzen, Festplattenverschlüsselung, SSH-Schlüssel statt Passwörter, VPN-Kill-Switches und datenschutzfreundliche Alternativen zu US-Clouddiensten.</p>
-            <ul class="chips"><li>LUKS</li><li>Clevis / Tang</li><li>SSH-Zertifikate</li><li>eigene CA</li></ul>
+            <h3>Sicherheit</h3>
+            <p>Festplattenverschlüsselung mit LUKS, auch mit Entsperrung übers Netzwerk, SSH-Zugang nur mit Schlüsseln, Firewall, automatische Sicherheitsupdates, VPN-Kill-Switch für Laptops.</p>
           </article>
-
           <article class="card card--lift service reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18M10 12.5 8 14.5l2 2M14 12.5l2 2-2 2"/></svg></span>
             </div>
-            <h3>Webdesign &amp; Webentwicklung</h3>
-            <p>Schnelle, moderne Webseiten ohne Baukasten-Ballast: responsiv, barrierearm und ohne Tracking. Von der Visitenkarte bis zur Web-App – auf Wunsch kostenlos auf GitHub Pages gehostet.</p>
-            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>Node.js</li><li>PHP</li></ul>
+            <h3>Webseiten und Web-Apps</h3>
+            <p>Webseiten mit HTML, CSS und JavaScript, ohne Tracking und ohne Baukasten; Web-Apps mit Vue oder Node.js. Hosting auf eigenem Server oder kostenlos über GitHub Pages.</p>
           </article>
-
           <article class="card card--lift service reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="4"/><path d="M17 3l4.5 8h-9L17 3Z"/><rect x="3" y="13" width="8" height="8" rx="2"/><path d="M13 17h8M17 13v8"/></svg></span>
             </div>
-            <h3>Icons, Logos &amp; Grafiken</h3>
-            <p>App- und Programm-Icons, Favicons, Logos und ganze Icon-Sets als saubere, skalierbare SVGs – in mehreren Stilen, mit passender Farbpalette und fertigen PNG-Exporten in allen Größen.</p>
-            <ul class="chips"><li>SVG</li><li>Icon-Sets</li><li>Favicons</li><li>Farbpaletten</li><li>PNG-Export</li></ul>
+            <h3>Icons und Logos</h3>
+            <p>App-Icons, Favicons und Logos als SVG, auf Wunsch als zusammenhängendes Set in mehreren Varianten, mit PNG-Exporten in allen benötigten Größen.</p>
           </article>
-
-          <article class="card card--lift service reveal">
-            <div class="service-top">
-              <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 19a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.5 4.75 4.75 0 0 1 17.5 19H7Z"/></svg></span>
-            </div>
-            <h3>Hosting &amp; Wartungsverträge</h3>
-            <p>Ich hoste Ihre Webseite, Ihre Cloud oder Ihre Dienste – und betreue sie dauerhaft: Updates, Backups, Überwachung und ein fester Ansprechpartner statt Ticket-Hotline.</p>
-            <ul class="chips"><li>Webhosting</li><li>Nextcloud</li><li>Vaultwarden</li><li>Backups</li></ul>
-          </article>
-
           <article class="card card--lift service reveal">
             <div class="service-top">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16v4"/></svg></span>
             </div>
             <h3>Linux-Arbeitsplätze</h3>
-            <p>Moderne, wartungsarme Linux-Desktops für Büro und Entwicklung: automatische Updates, vorinstallierte Software und ein reproduzierbares Setup für jeden neuen Rechner.</p>
-            <ul class="chips"><li>Fedora Silverblue</li><li>Bluefin</li><li>Flatpak</li><li>GNOME</li></ul>
+            <p>Fedora Silverblue oder Bluefin einrichten – Software, Einstellungen, automatische Updates – und per Skript auf weitere Rechner übertragen.</p>
           </article>
         </div>
 
         <div class="banner reveal">
           <div>
-            <h3>Etwas anderes im Sinn?</h3>
-            <p>Nicht jede Aufgabe passt in eine Schublade. Beschreiben Sie mir kurz Ihr Anliegen – ich sage Ihnen ehrlich, ob und wie ich helfen kann.</p>
+            <h3>Nicht dabei?</h3>
+            <p>Beschreiben Sie kurz, worum es geht – ich sage Ihnen, ob ich helfen kann.</p>
           </div>
           <a class="btn btn--ghost" href="#kontakt">
             Anliegen schildern
@@ -267,54 +250,64 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Hosting</p>
-          <h2 id="hosting-title">Hosting, das betreut wird – nicht nur bereitgestellt</h2>
-          <p>Ob Webseite, eigene Cloud oder VPN: Ich richte Ihren Dienst ein, betreibe ihn und halte ihn aktuell. Sie haben einen festen Ansprechpartner und behalten jederzeit die volle Kontrolle über Ihre Daten.</p>
+          <h2 id="hosting-title">Hosting mit Betreuung</h2>
+          <p>Ich richte den Dienst ein, betreibe ihn und halte ihn aktuell. Ihre Daten können Sie jederzeit vollständig exportieren.</p>
         </header>
 
         <div class="hosting-grid">
           <div class="host-list">
             <article class="card host-item reveal">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg></span>
-              <h3>Webseiten</h3>
-              <p>Statische Seiten, PHP oder Node.js – mit HTTPS-Zertifikat und Veröffentlichung per Git. Auf Wunsch kostenlos über GitHub Pages.</p>
+              <h3>Webseiten und WordPress</h3>
+              <p>Statische Seiten, PHP-Anwendungen und WordPress auf Apache oder nginx, mit HTTPS.</p>
             </article>
             <article class="card host-item reveal">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2.5h7.5A2.5 2.5 0 0 1 21 10v6.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5v-9Z"/></svg></span>
-              <h3>Eigene Cloud</h3>
-              <p>Nextcloud für Dateien, Kalender und Kontakte im Team – Ihre eigene Cloud statt Dropbox, Google Drive &amp; Co.</p>
+              <h3>Nextcloud</h3>
+              <p>Dateien, Kalender und Kontakte für Familie, Verein oder Team.</p>
             </article>
             <article class="card host-item reveal">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="m11.2 11.8 8.8-8.8M16.5 6.5l2.5 2.5M14 9l2 2"/></svg></span>
               <h3>Passwort-Manager</h3>
-              <p>Vaultwarden, kompatibel mit den Bitwarden-Apps für alle Geräte – Zugangsdaten sicher im Team teilen.</p>
+              <p>Vaultwarden, nutzbar mit den Bitwarden-Apps auf allen Geräten.</p>
+            </article>
+            <article class="card host-item reveal">
+              <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1-4.4A8.5 8.5 0 1 1 20.5 12Z"/></svg></span>
+              <h3>Chat-Server</h3>
+              <p>Matrix oder XMPP – ein eigener Messenger-Server statt eines fremden Dienstes.</p>
             </article>
             <article class="card host-item reveal">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span>
-              <h3>VPN &amp; Fernzugriff</h3>
-              <p>WireGuard oder OpenVPN: sicherer Zugriff auf Ihr Firmennetz von überall – für Laptops, Smartphones und ganze Standorte.</p>
+              <h3>VPN</h3>
+              <p>WireGuard, OpenVPN oder SoftEther für Fernzugriff und die Vernetzung von Standorten.</p>
             </article>
             <article class="card host-item reveal">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5h17l-6.5 7.5V19l-4 2v-8.5L3.5 5Z"/></svg></span>
-              <h3>DNS &amp; Werbefilter</h3>
-              <p>Pi-hole für Ihr Netzwerk: weniger Werbung, weniger Tracking und eigene interne Namen für Ihre Dienste.</p>
+              <h3>DNS und Werbefilter</h3>
+              <p>Pi-hole für das ganze Netzwerk, mit eigenen Namen für interne Dienste.</p>
+            </article>
+            <article class="card host-item reveal">
+              <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.5M4.5 12v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V12"/></svg></span>
+              <h3>Datenbanken</h3>
+              <p>MariaDB/MySQL oder PostgreSQL für Ihre Anwendungen, mit regelmäßigen Backups.</p>
             </article>
             <article class="card host-item reveal">
               <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/></svg></span>
-              <h3>Ihre Anwendung</h3>
-              <p>Ihre eigene Software oder ein Open-Source-Dienst Ihrer Wahl – sauber im Container betrieben und überwacht.</p>
+              <h3>Eigene Anwendungen</h3>
+              <p>Ihre Software oder ein anderer Open-Source-Dienst, als Container betrieben.</p>
             </article>
           </div>
 
           <aside class="card included reveal" aria-labelledby="included-title">
-            <h3 id="included-title">Immer inklusive</h3>
+            <h3 id="included-title">Bei jedem Hosting dabei</h3>
             <ul class="checklist">
               <li>Sicherheitsupdates mit festem Wartungsfenster</li>
-              <li>Regelmäßige Backups mit Wiederherstellungstest</li>
-              <li>HTTPS mit automatisch erneuerten Zertifikaten</li>
-              <li>Überwachung der Dienste</li>
-              <li>Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO</li>
-              <li>Ihre Daten gehören Ihnen – Export jederzeit, kein Lock-in</li>
-              <li>Persönlicher Ansprechpartner statt Hotline</li>
+              <li>Regelmäßige Backups, Wiederherstellung getestet</li>
+              <li>HTTPS-Zertifikate, automatisch erneuert</li>
+              <li>Überwachung, ob die Dienste laufen</li>
+              <li>Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO)</li>
+              <li>Datenexport jederzeit</li>
+              <li>Ein fester Ansprechpartner</li>
             </ul>
             <p class="note">Standort nach Wahl: ein Rechenzentrum in der EU oder Hardware bei Ihnen vor Ort.</p>
           </aside>
@@ -328,7 +321,7 @@
         <header class="section-head">
           <p class="eyebrow">Zusammenarbeit</p>
           <h2 id="zusammenarbeit-title">Drei Wege, mit mir zu arbeiten</h2>
-          <p>Ich übernehme am liebsten überschaubare Projekte und betreue sie langfristig. Wie wir zusammenarbeiten, hängt davon ab, was Sie brauchen.</p>
+          <p>Je nach Aufgabe rechne ich nach Aufwand, zum Festpreis oder als monatliche Pauschale ab.</p>
         </header>
 
         <div class="models">
@@ -359,8 +352,8 @@
           <article class="card model model--featured reveal">
             <span class="badge">Empfohlen</span>
             <p class="model-kicker">Betreuung</p>
-            <h3>Langfristig &amp; entspannt</h3>
-            <p>Ihre IT läuft – und Sie wissen, wen Sie anrufen.</p>
+            <h3>Laufende Betreuung</h3>
+            <p>Für Server und Dienste, die dauerhaft betreut werden sollen.</p>
             <ul class="checklist">
               <li>Wartung, Updates und Überwachung</li>
               <li>Backups und Hosting aus einer Hand</li>
@@ -489,7 +482,7 @@
           <div class="case-copy reveal">
             <p class="case-label">Web-App · Kryptografie</p>
             <h3 id="case-gen">Kiwi Key Generator: SSH- und TLS-Zertifikate im Browser</h3>
-            <p>Eine Web-App zum Erstellen und Verwalten von SSH-Schlüsseln, SSH-Zertifikaten und einer eigenen TLS-Zertifizierungsstelle – vollständig lokal, ohne dass ein Schlüssel die Seite verlässt. Ideal für interne Dienste, Homelabs und kleine Firmennetze.</p>
+            <p>Eine Web-App zum Erstellen und Verwalten von SSH-Schlüsseln, SSH-Zertifikaten und einer eigenen TLS-Zertifizierungsstelle – vollständig lokal, ohne dass ein Schlüssel die Seite verlässt.</p>
             <ul class="checklist">
               <li>OpenSSH-, X.509-, PKCS#8-, PKCS#10- und PKCS#12-Formate selbst implementiert – eine Datei, keine Abhängigkeiten</li>
               <li>Verschlüsselter Tresor im Browser (AES-256-GCM, PBKDF2 mit 600.000 Iterationen)</li>
@@ -580,87 +573,86 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Tech-Stack</p>
-          <h2 id="stack-title">Werkzeuge, mit denen ich arbeite</h2>
-          <p>Mein Schwerpunkt liegt auf Linux und Netzwerken. Hervorgehobene Technologien setze ich täglich ein, die übrigen regelmäßig in Projekten.</p>
+          <h2 id="stack-title">Womit ich arbeite</h2>
+          <p>Die Werkzeuge, die ich einsetze, und wofür ich sie bisher genutzt habe. Die Liste ist nicht vollständig – wenn Ihr System fehlt, fragen Sie einfach nach.</p>
         </header>
-        <div class="legend" aria-hidden="true">
-          <span><span class="chip is-core">Technologie</span> täglich im Einsatz</span>
-          <span><span class="chip">Technologie</span> Projekterfahrung</span>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card stack-group stack-group--focus reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg></span>Linux &amp; Systeme</h3>
-            <p>Server und Arbeitsplätze – vom vServer bis zum Homelab.</p>
-            <ul class="chips">
-              <li class="is-core">Debian</li><li class="is-core">Fedora CoreOS</li><li class="is-core">systemd</li><li>uCore</li><li>Fedora Silverblue / Bluefin</li><li>Proxmox VE</li><li>rpm-ostree</li><li>Flatpak</li><li>GNOME</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group stack-group--focus reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.6 17M12 11.5l5.4 5.5"/></svg></span>Netzwerk &amp; VPN</h3>
-            <p>Mein Spezialgebiet: sichere Verbindungen und saubere Netze.</p>
-            <ul class="chips">
-              <li class="is-core">WireGuard</li><li class="is-core">OpenVPN</li><li class="is-core">nftables / iptables</li><li class="is-core">Pi-hole</li><li>DNS / DNS-over-HTTPS</li><li>NetworkManager</li><li>systemd-resolved</li><li>gluetun</li><li>wg-easy</li><li>Tor / SOCKS5</li><li>OpenWrt</li><li>FritzBox</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.2v9.6L12 21l8-4.2V7.2L12 3Z"/><path d="M4 7.2 12 11.4l8-4.2M12 11.4V21"/></svg></span>Container &amp; Virtualisierung</h3>
-            <p>Dienste sauber getrennt und reproduzierbar ausgerollt.</p>
-            <ul class="chips">
-              <li class="is-core">Docker</li><li class="is-core">Podman (rootless)</li><li class="is-core">Docker Compose</li><li>Portainer</li><li>Proxmox (VM &amp; LXC)</li><li>GHCR</li><li>Multi-Arch-Builds</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.6h-3.6M5.5 20.5v-3.6h3.6"/></svg></span>Automatisierung &amp; CI</h3>
-            <p>Skripte und Pipelines statt Handarbeit.</p>
-            <ul class="chips">
-              <li class="is-core">Bash</li><li class="is-core">Python</li><li class="is-core">GitHub Actions</li><li>Jinja2</li><li>YAML</li><li>Butane / Ignition</li><li>Debian Preseed</li><li>systemd-Timer</li><li>Make</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.2c0 4.4 2.9 8.2 7 9.8 4.1-1.6 7-5.4 7-9.8V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>Sicherheit &amp; Kryptografie</h3>
-            <p>Härtung, Verschlüsselung und eigene PKI.</p>
-            <ul class="chips">
-              <li class="is-core">SSH-Schlüssel &amp; -Zertifikate</li><li class="is-core">TLS / eigene CA</li><li>LUKS</li><li>Clevis / Tang</li><li>polkit</li><li>D-Bus</li><li>SELinux</li><li>Trivy</li><li>Web Crypto API</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 19a5 5 0 0 1-.6-9.96A6.5 6.5 0 0 1 18.8 9.5 4.75 4.75 0 0 1 17.5 19H7Z"/></svg></span>Self-Hosting</h3>
-            <p>Bewährte Open-Source-Dienste statt US-Cloud.</p>
-            <ul class="chips">
-              <li class="is-core">Nextcloud</li><li class="is-core">Vaultwarden</li><li class="is-core">nginx (Reverse Proxy)</li><li>Nextcloud AIO</li><li>Transmission</li><li>JDownloader</li><li>SFTP</li><li>Tang (NBDE)</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18M10 12.5 8 14.5l2 2M14 12.5l2 2-2 2"/></svg></span>Web &amp; Frontend</h3>
-            <p>Schnelle, barrierearme Webseiten ohne Ballast.</p>
-            <ul class="chips">
-              <li class="is-core">HTML</li><li class="is-core">CSS</li><li class="is-core">JavaScript</li><li>TypeScript</li><li>Vue 3</li><li>Pinia</li><li>Vite</li><li>MkDocs Material</li><li>GitHub Pages</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5.5" r="2.5"/><circle cx="6" cy="18.5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8v8M18 10.5c0 4.5-6 3.5-11 6.2"/></svg></span>Backend &amp; Peer-to-Peer</h3>
-            <p>Server-Logik und dezentrale Anwendungen.</p>
-            <ul class="chips">
-              <li class="is-core">Node.js</li><li>PHP</li><li>Go</li><li>Rust</li><li>Gun.js / SEA</li><li>IPFS</li><li>WebRTC / PeerJS</li><li>IndexedDB</li>
-            </ul>
-          </article>
-
-          <article class="card stack-group reveal">
-            <h3><span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="7" r="4"/><path d="M17 3l4.5 8h-9L17 3Z"/><rect x="3" y="13" width="8" height="8" rx="2"/><path d="M13 17h8M17 13v8"/></svg></span>Design &amp; Oberflächen</h3>
-            <p>Icons, Logos und Oberflächen, die zusammenpassen.</p>
-            <ul class="chips">
-              <li class="is-core">SVG-Icons</li><li class="is-core">Logos &amp; Favicons</li><li>Icon-Sets in mehreren Stilen</li><li>Farbpaletten &amp; Design-Tokens</li><li>PNG-Export</li><li>GTK4 / libadwaita</li><li>GNOME-Shell-Erweiterungen</li><li>Responsive Design</li>
-            </ul>
-          </article>
-        </div>
+        <ul class="skills">
+          <li class="skill reveal">
+            <h3>Linux-Server <span class="badge">Schwerpunkt</span></h3>
+            <p class="skill-tools">Debian, Fedora CoreOS, uCore, Proxmox VE, systemd</p>
+            <p class="skill-use">Server einrichten und pflegen. Unbeaufsichtigte Installation per Preseed bzw. Ignition, automatische Updates mit Neustart im Wartungsfenster, virtuelle Maschinen und LXC-Container unter Proxmox.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>VPN <span class="badge">Schwerpunkt</span></h3>
+            <p class="skill-tools">WireGuard, wg-easy, OpenVPN, SoftEther VPN, gluetun</p>
+            <p class="skill-use">Fernzugriff und Verbindungen zwischen Standorten. Ein WireGuard-Mesh mit zentralem Zugangspunkt und Ausgang über einen VPN-Anbieter (<a href="projekte.html#kiwi-server">kiwi-server</a>), ein Kill-Switch für den Desktop (<a href="projekte.html#kiwi-killswitch">kiwi-killswitch</a>).</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Firewall, DNS und Routing <span class="badge">Schwerpunkt</span></h3>
+            <p class="skill-tools">nftables, iptables, Pi-hole, systemd-resolved, NetworkManager, OpenWrt</p>
+            <p class="skill-use">Firewall-Regeln für Server und Gateways, netzweites DNS mit Werbefilter, Schutz vor DNS-Lecks, LAN-Gateways, die ihren Verkehr durch ein VPN leiten.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Webserver, PHP und WordPress</h3>
+            <p class="skill-tools">Apache (auch mit php-cgi), nginx, PHP, WordPress</p>
+            <p class="skill-use">Webseiten, PHP-Anwendungen und WordPress betreiben; nginx als Reverse Proxy mit HTTPS vor Container-Diensten.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Datenbanken</h3>
+            <p class="skill-tools">MariaDB, MySQL, PostgreSQL, SQLite</p>
+            <p class="skill-use">Datenbanken für Web-Anwendungen einrichten, sichern und umziehen.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Container</h3>
+            <p class="skill-tools">Docker, Docker Compose, Podman (auch rootless), Portainer</p>
+            <p class="skill-use">Dienste als Compose-Stacks betreiben, eigene Images bauen und per GitHub Actions veröffentlichen (<a href="projekte.html#tangpod">tangpod</a>), getrennte Container-Netze mit eigener Firewall (<a href="projekte.html#kiwi-fox">kiwi-fox</a>).</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Selbst gehostete Dienste</h3>
+            <p class="skill-tools">Nextcloud, Vaultwarden, Matrix, XMPP, Pi-hole, Tang, SFTP</p>
+            <p class="skill-use">Cloud, Passwort-Manager, Chat-Server und mehr auf eigener Hardware oder einem vServer, hinter Reverse Proxy und VPN.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Sicherheit und Verschlüsselung</h3>
+            <p class="skill-tools">LUKS, Clevis/Tang, OpenSSH, OpenSSL</p>
+            <p class="skill-use">Festplatten verschlüsseln und übers Netzwerk entsperren, SSH-Zugang nur mit Schlüsseln oder Zertifikaten, eigene Zertifizierungsstelle für interne HTTPS-Dienste.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Automatisierung</h3>
+            <p class="skill-tools">Bash, Python, systemd-Units und -Timer, Jinja2, GitHub Actions</p>
+            <p class="skill-use">Skripte für wiederkehrende Aufgaben, Konfigurationen aus Vorlagen erzeugen, zeitgesteuerte Jobs, Builds und Tests in der CI.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Linux-Arbeitsplätze</h3>
+            <p class="skill-tools">Fedora Silverblue, Bluefin, GNOME, Flatpak, rpm-ostree</p>
+            <p class="skill-use">Image-basierte Desktops einrichten und per Skript auf weitere Rechner übertragen (<a href="projekte.html#ensconce">ensconce</a>), Software über Git-Kataloge verteilen (<a href="projekte.html#kiwi-updater">kiwi-updater</a>).</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Programmiersprachen</h3>
+            <p class="skill-tools">Bash, Python, JavaScript, TypeScript, PHP, Go, Rust</p>
+            <p class="skill-use">Bash und Python für Werkzeuge und Automatisierung, JavaScript für Web-Apps. Mit TypeScript, PHP, Go und Rust habe ich ebenfalls gearbeitet.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Web-Frontend</h3>
+            <p class="skill-tools">HTML, CSS, JavaScript, Vue 3, Vite, Node.js</p>
+            <p class="skill-use">Webseiten ohne Framework und ohne Tracking, Web-Apps mit Vue, eigene Static-Site-Generatoren in Node.js und Bash.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Peer-to-Peer</h3>
+            <p class="skill-tools">Gun.js (SEA), IPFS, WebRTC (PeerJS)</p>
+            <p class="skill-use">Web-Apps ohne zentralen Server: verschlüsselter Chat (<a href="projekte.html#enigmajs">EnigmaJS</a>), Pinnwand (<a href="projekte.html#devboard">DevBoard</a>), Netzwerkspiel (<a href="projekte.html#pongjs">pongjs</a>).</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Desktop-Apps</h3>
+            <p class="skill-tools">Python mit GTK4/libadwaita, GNOME-Shell-Erweiterungen</p>
+            <p class="skill-use">Oberflächen für die eigenen Werkzeuge, etwa die Einstellungs-App von kiwi-killswitch und die App-Übersicht von kiwi-updater.</p>
+          </li>
+          <li class="skill reveal">
+            <h3>Grafik und Icons</h3>
+            <p class="skill-tools">SVG, rsvg-convert</p>
+            <p class="skill-use">Icon-Sets und Logos als SVG, PNG-Exporte in allen Größen per Skript (<a href="projekte.html#kiwi-icons">kiwi-icons</a>).</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -669,32 +661,32 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Arbeitsweise</p>
-          <h2 id="arbeitsweise-title">Worauf Sie sich verlassen können</h2>
+          <h2 id="arbeitsweise-title">Wie ich arbeite</h2>
         </header>
         <div class="principles">
           <div class="principle reveal">
             <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.6h-3.6M5.5 20.5v-3.6h3.6"/></svg></span>
-            <div><h3>Automatisiert &amp; reproduzierbar</h3><p>Server und Dienste richte ich per Skript und Konfigurationsdatei ein. Fällt etwas aus, ist es schnell und identisch wiederhergestellt.</p></div>
+            <div><h3>Skripte statt Handarbeit</h3><p>Server richte ich per Skript bzw. Konfigurationsdatei ein. So bleibt nachvollziehbar, was eingerichtet ist, und ein System lässt sich bei Bedarf neu aufsetzen.</p></div>
           </div>
           <div class="principle reveal">
             <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
-            <div><h3>Dokumentiert &amp; transparent</h3><p>Sie erhalten Zugangsdaten, Dokumentation und auf Wunsch den kompletten Code. Keine Blackbox und keine Abhängigkeit von mir.</p></div>
+            <div><h3>Sie bekommen alles</h3><p>Zugangsdaten, Dokumentation und auf Wunsch die Skripte. Sie sind nicht von mir abhängig.</p></div>
           </div>
           <div class="principle reveal">
             <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5.5" r="2.5"/><circle cx="6" cy="18.5" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8v8M18 10.5c0 4.5-6 3.5-11 6.2"/></svg></span>
-            <div><h3>Open Source statt Lock-in</h3><p>Ich setze auf bewährte freie Software. Ihre Daten und Systeme bleiben Ihre – ohne Lizenzfallen und ohne Anbieterbindung.</p></div>
+            <div><h3>Freie Software</h3><p>Ich setze auf Open Source: keine Lizenzkosten, und Ihre Daten bleiben in offenen Formaten exportierbar.</p></div>
           </div>
           <div class="principle reveal">
             <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.2c0 4.4 2.9 8.2 7 9.8 4.1-1.6 7-5.4 7-9.8V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <div><h3>Sicher ab Werk</h3><p>SSH-Schlüssel statt Passwörter, Firewall, Verschlüsselung und automatische Sicherheitsupdates sind Standard – kein Aufpreis.</p></div>
+            <div><h3>Absicherung gehört dazu</h3><p>SSH-Schlüssel statt Passwörter, Firewall und automatische Sicherheitsupdates sind Teil jeder Einrichtung.</p></div>
           </div>
           <div class="principle reveal">
             <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.1A9.8 9.8 0 0 1 12 5c5 0 8.7 4.2 9.7 7a12.4 12.4 0 0 1-3.1 4.3M6.6 6.6C4.4 8 2.9 10.1 2.3 12c1 2.8 4.7 7 9.7 7 1.6 0 3.1-.4 4.4-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></span>
-            <div><h3>Datenschutz mitgedacht</h3><p>Hosting in der EU, sparsame Datenverarbeitung und AV-Verträge – damit Ihre IT zur DSGVO passt. Diese Website selbst kommt ohne Cookies und Tracking aus.</p></div>
+            <div><h3>Datenschutz</h3><p>Hosting in der EU oder bei Ihnen vor Ort, Vertrag zur Auftragsverarbeitung. Diese Website setzt weder Cookies noch Tracking ein.</p></div>
           </div>
           <div class="principle reveal">
             <span class="icon-tile"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1-4.4A8.5 8.5 0 1 1 20.5 12Z"/></svg></span>
-            <div><h3>Ehrlich &amp; direkt</h3><p>Realistische Aufwandsschätzungen, klare Kommunikation und ein Ansprechpartner, der Ihre Systeme selbst kennt.</p></div>
+            <div><h3>Klare Ansagen</h3><p>Vorab eine realistische Aufwandsschätzung. Wenn eine Aufgabe nicht zu meinen Kenntnissen passt, sage ich das.</p></div>
           </div>
         </div>
       </div>
@@ -745,14 +737,14 @@
         <div class="about-copy reveal">
           <p class="eyebrow">Über mich</p>
           <h2 id="about-title">Hallo, ich bin Maximilian.</h2>
-          <p>Linux und Netzwerke sind für mich Beruf und Leidenschaft zugleich. Unter dem Namen <strong>derlocke</strong> entwickle ich <a href="https://kiwi-network.eu">Kiwi Network</a> – eine Sammlung von Open-Source-Werkzeugen für private Netzwerke und sichere Linux-Arbeitsplätze: von kiwi-server, das ganze Server-Flotten aus einer Datei aufsetzt, bis zum VPN-Kill-Switch für GNOME.</p>
-          <p>Als Freelancer übernehme ich am liebsten überschaubare Projekte, die ich langfristig betreue. Ich mag es, wenn Systeme still und zuverlässig laufen – und wenn meine Kunden wissen, wen sie anrufen können, falls doch einmal etwas hakt.</p>
+          <p>Ich betreue Linux-Server und Netzwerke und schreibe die Werkzeuge dafür oft selbst. Unter dem Namen <strong>derlocke</strong> entwickle ich <a href="https://kiwi-network.eu">Kiwi Network</a>, Open-Source-Werkzeuge für private Netzwerke und Linux-Arbeitsplätze – darunter kiwi-server, das Server aus einer Konfigurationsdatei aufsetzt, und kiwi-killswitch, einen VPN-Kill-Switch für GNOME.</p>
+          <p>Als Freelancer übernehme ich am liebsten überschaubare Projekte, die ich danach weiter betreue. Meine Kunden sollen wissen, an wen sie sich wenden können, wenn etwas nicht funktioniert.</p>
           <p>Ich arbeite remote für Kunden in ganz Deutschland und vor Ort im Raum <span class="ph">[Region]</span>.</p>
           <dl class="facts">
             <div><dt>Unternehmen</dt><dd>Maximilian Locke – IT Freelancer</dd></div>
             <div><dt>Standort</dt><dd><span class="ph">[Ort]</span> · remote deutschlandweit</dd></div>
-            <div><dt>Schwerpunkte</dt><dd>Linux-Server, Netzwerke &amp; VPN, Automatisierung</dd></div>
-            <div><dt>Außerdem</dt><dd>Container, Webentwicklung, Icon-Design, Hosting</dd></div>
+            <div><dt>Schwerpunkte</dt><dd>Linux-Server, Netzwerke und VPN</dd></div>
+            <div><dt>Außerdem</dt><dd>Webserver und Datenbanken, Automatisierung, Container, Webseiten, Icons, Hosting</dd></div>
             <div><dt>Sprachen</dt><dd>Deutsch, Englisch</dd></div>
             <div><dt>Online</dt><dd><a href="https://github.com/derlocke-ng">GitHub</a> · <a href="https://derlocke.net">Blog</a> · <a href="https://kiwi-network.eu">Kiwi Network</a></dd></div>
           </dl>
@@ -856,6 +848,7 @@
                   <option>Wartung &amp; Betreuung</option>
                   <option>Fehlerbehebung / Störung</option>
                   <option>Netzwerk, VPN &amp; Firewall</option>
+                  <option>Webserver, WordPress &amp; Datenbanken</option>
                   <option>Automatisierung mit Bash / Python</option>
                   <option>Container &amp; Self-Hosting</option>
                   <option>Webseite / Web-App</option>
