@@ -916,7 +916,7 @@ code, kbd, samp { font-family: var(--font-mono); font-size: .9em; }
 }
 .mini:hover { border-color: var(--accent-line); color: var(--text-2); transform: translateY(-2px); }
 .mini img, .mini .mini-icon { width: 44px; height: 44px; flex: none; border-radius: 10px; }
-.mini img.mini-shot { object-fit: cover; object-position: top left; border: 1px solid var(--line); }
+.mini img.mini-shot { object-fit: cover; object-position: center; border: 1px solid var(--line); }
 .mini .mini-icon { display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); color: var(--accent); }
 .mini .mini-icon svg { width: 22px; height: 22px; }
 .mini strong { display: block; font-size: .96rem; line-height: 1.3; }
