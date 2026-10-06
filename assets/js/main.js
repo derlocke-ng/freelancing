@@ -76,7 +76,8 @@
   }
 
   /* ---------- Aktiver Navigationspunkt (nur auf der Startseite) ---------- */
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav a[href^="#"]'));
+  // Links auf Abschnitte (#…) und Links, die per data-section für einen Abschnitt stehen
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav a[href^="#"], .site-nav a[data-section]'));
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
   if (navLinks.length && sections.length) {
     var spyQueued = false;
@@ -88,7 +89,8 @@
         if (section.getBoundingClientRect().top <= mark) current = section;
       });
       navLinks.forEach(function (link) {
-        link.classList.toggle('is-active', !!current && link.getAttribute('href') === '#' + current.id);
+        var target = link.getAttribute('data-section') || link.getAttribute('href').slice(1);
+        link.classList.toggle('is-active', !!current && target === current.id);
       });
     };
     window.addEventListener('scroll', function () {
