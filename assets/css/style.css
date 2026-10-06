@@ -642,6 +642,9 @@ code, kbd, samp { font-family: var(--font-mono); font-size: .9em; }
   letter-spacing: -.03em;
 }
 .stat-label { display: block; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.stat--link { color: inherit; text-decoration: none; transition: background-color .15s; }
+.stat--link:hover { background: var(--surface); color: inherit; }
+.stat-more { display: block; margin-top: 10px; color: var(--accent); font-size: .85rem; font-weight: 600; }
 
 /* --- Abschnitte --- */
 .section { position: relative; padding-block: var(--section-y); }
