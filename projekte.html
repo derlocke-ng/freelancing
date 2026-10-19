@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
   <title>Projekte – Maximilian Locke, IT Freelancer</title>
-  <meta name="description" content="Über 20 Open-Source-Projekte mit Technologien und Links: Server-Automatisierung, WireGuard-Netzwerke, VPN-Kill-Switch, Container, Web-Apps, Webseiten und Icon-Design.">
+  <meta name="description" content="Über 25 Open-Source-Projekte mit Technologien und Links: Server-Automatisierung, WireGuard-Netzwerke, VPN-Kill-Switch, Container, Web-Apps, Webseiten und Icon-Design.">
   <link rel="canonical" href="https://derlocke-ng.github.io/freelancing/projekte.html">
   <meta name="theme-color" content="#0b0e13" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
@@ -96,11 +96,24 @@
               <img src="assets/img/kiwi/kiwi-server.svg" alt="" width="92" height="92" loading="lazy">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Server · Netzwerk</span><span class="status status--active">Aktiv</span></div>
+              <div class="project-meta"><span>Server · Netzwerk</span><span class="status status--active">Aktiv · <span class="ver">v2.5.0</span></span></div>
               <h3>kiwi-server</h3>
-              <p>Baut die Maschinen eines Kiwi Networks: Aus einer <code>fleet.yaml</code> entstehen pro Host ein Rollen-Skript, eine Ignition- oder Preseed-Konfiguration und ein ISO, das sich unbeaufsichtigt installiert. Rollen für VPN-Zugangspunkt, LAN-Gateway und Cloud-Knoten; CLI und GTK4-App.</p>
-              <ul class="chips"><li>Python</li><li>Jinja2</li><li>Bash</li><li>Butane / Ignition</li><li>Preseed</li><li>Docker Compose</li><li>WireGuard</li><li>GTK4</li></ul>
+              <p>Baut und verwaltet die Maschinen eines Kiwi Networks: Aus einer <code>fleet.yaml</code> entstehen pro Host ein Rollen-Skript, eine Ignition- oder Preseed-Konfiguration und ein ISO, das sich unbeaufsichtigt installiert – für Fedora CoreOS, uCore und Debian. Dienste laufen als Podman-Quadlets. Laufende Maschinen werden per SSH aktualisiert (<code>apply</code>, <code>status</code>), WireGuard-Clients samt QR-Code eingerichtet (<code>enroll</code>), und das Fleet-Verzeichnis wird verschlüsselt auf die Knoten gesichert. CLI und GTK4-App.</p>
+              <ul class="chips"><li>Python</li><li>Jinja2</li><li>Bash</li><li>Butane / Ignition</li><li>Preseed</li><li>Podman-Quadlets</li><li>WireGuard</li><li>GTK4</li></ul>
               <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-server">Quellcode</a><a href="https://kiwi-network.eu/docs/server/">Dokumentation</a></div>
+            </div>
+          </article>
+
+          <article class="card project js-project reveal" id="kiwi-modules" data-cat="server container automation">
+            <div class="project-media project-media--icon tile-server">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.2v9.6L12 21l8-4.2V7.2L12 3Z"/><path d="M4 7.2 12 11.4l8-4.2M12 11.4V21"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Server · Container</span><span class="status status--active">Aktiv</span></div>
+              <h3>kiwi-modules <small>&amp; kiwi-stack</small></h3>
+              <p>Die Module von kiwi-server als eigenständige Pakete für einzelne Maschinen: kiwi-modules macht aus einer Maschinen-Datei ein Stack-Bundle (Podman-Quadlets oder Compose, Konfigurationen, Host-Units), kiwi-stack installiert es auf CoreOS, uCore oder Debian – wiederholbar, mit Firewall-Freigaben, Image-Pulls und einer Prüfung, ob alle Container laufen. Passwörter werden aus einem Seed abgeleitet, sodass ein neues Rendern nichts rotiert.</p>
+              <ul class="chips"><li>Python</li><li>Jinja2</li><li>Bash</li><li>Podman-Quadlets</li><li>systemd</li><li>Docker Compose</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-modules">kiwi-modules</a><a href="https://github.com/derlocke-ng/kiwi-stack">kiwi-stack</a></div>
             </div>
           </article>
 
@@ -110,7 +123,7 @@
               <img class="cover" src="assets/img/projects/kiwi-killswitch.webp" alt="GTK4-Oberfläche von kiwi-killswitch mit Schutzstatus und Schutzstufen" width="960" height="600" loading="lazy" decoding="async">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Netzwerk · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <div class="project-meta"><span>Netzwerk · Desktop</span><span class="status status--active">Aktiv · <span class="ver">v0.2.2</span></span></div>
               <h3>kiwi-killswitch</h3>
               <p>Fail-closed VPN-Kill-Switch für GNOME auf Fedora Silverblue und Bluefin: ein Root-Dienst mit nftables-Regeln für IPv4 und IPv6, gesteuert über Quick Settings, GTK4-App oder CLI – ohne Passwortabfrage. Mit DNS-Leckschutz und drei Schutzstufen.</p>
               <ul class="chips"><li>Python</li><li>nftables</li><li>D-Bus</li><li>systemd</li><li>NetworkManager</li><li>GNOME Shell</li><li>GTK4</li></ul>
@@ -174,13 +187,39 @@
             </div>
           </article>
 
+          <article class="card project js-project reveal" id="armory" data-cat="web design">
+            <div class="project-media">
+              <img class="cover" src="assets/img/projects/armory.webp" alt="Startseite von Armory: Peer-to-Peer-Webtools auf nostr, mit der App Loadout" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web-App · nostr</span><span class="status status--active">Aktiv</span></div>
+              <h3>Armory</h3>
+              <p>Ein Hub mit Peer-to-Peer-Webtools, die komplett im Browser laufen und über frei wählbare nostr-Relays synchronisieren: Loadout (geteilte Listen, Vorräte und Notizen, Ende-zu-Ende-verschlüsselt), Payload (Dateien direkt von Browser zu Browser), DevBoard, pongjs und EnigmaJS. Ein Konto für alle Tools, installierbar als Web-App, in acht Sprachen. Zugleich die Vorlage, um eigene Hubs zu forken.</p>
+              <ul class="chips"><li>React 19</li><li>TypeScript</li><li>Vite</li><li>nostr</li><li>WebRTC</li><li>AES-GCM</li><li>Playwright</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/armory/">Live ansehen</a><a href="https://github.com/derlocke-ng/armory">Quellcode</a></div>
+            </div>
+          </article>
+
+          <article class="card project js-project reveal" id="kiwi-framework" data-cat="web">
+            <div class="project-media project-media--icon tile-green">
+              <span class="glyph"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/></svg></span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta"><span>Web · Framework</span><span class="status status--active">Aktiv · <span class="ver">v0.7.0</span></span></div>
+              <h3>kiwi-framework <small>&amp; kiwi-web-catalog</small></h3>
+              <p>Die Engine hinter Armory: Konten ohne Registrierungsserver, Relays und Synchronisierung, Freunde und Kreise, Moderation, Proof of Work, verschlüsselte Fotos auf Blossom-Servern, Übersetzungen, App-Gerüst, Build und Scaffolding. Das Protokoll ist dokumentiert; Unit-, Smoke- und Browser-Tests laufen gegen lokale Relays. Hubs finden die Apps anderer Hubs über den Git-Katalog kiwi-web-catalog.</p>
+              <ul class="chips"><li>TypeScript</li><li>React 19</li><li>Vite</li><li>nostr-tools</li><li>Biome</li><li>node --test</li><li>Playwright</li></ul>
+              <div class="project-links"><a href="https://github.com/derlocke-ng/kiwi-framework">Quellcode</a><a href="https://github.com/derlocke-ng/kiwi-web-catalog">Katalog</a></div>
+            </div>
+          </article>
+
           <!-- kiwi-fox -->
           <article class="card project js-project reveal" id="kiwi-fox" data-cat="container network desktop">
             <div class="project-media">
               <img class="cover" src="assets/img/projects/kiwi-fox.webp" alt="Kiwi-Fox: Profilliste und Dialog zum Anlegen eines neuen Profils" width="960" height="600" loading="lazy" decoding="async">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Container · Netzwerk</span><span class="status status--active">Aktiv</span></div>
+              <div class="project-meta"><span>Container · Netzwerk</span><span class="status status--active">Aktiv · <span class="ver">v0.1.3</span></span></div>
               <h3>kiwi-fox</h3>
               <p>Isolierte Browser-Profile in rootless Podman: Jedes Profil hat eigenen Speicher, eigenen Proxy-Ausgang, eigenen DNS-Resolver mit Werbefilter und einen festen Fingerprint. Ein Gateway-Container mit nftables-Default-Drop ist der einzige Weg nach draußen – fällt er aus, gibt es keine Route.</p>
               <ul class="chips"><li>Python 3.12</li><li>Pydantic</li><li>Podman (rootless)</li><li>nftables</li><li>SOCKS5</li><li>GTK4</li></ul>
@@ -194,7 +233,7 @@
               <img src="assets/img/kiwi/kiwi-updater.svg" alt="" width="92" height="92" loading="lazy">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Automatisierung · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <div class="project-meta"><span>Automatisierung · Desktop</span><span class="status status--active">Aktiv · <span class="ver">v2.2.0</span></span></div>
               <h3>kiwi-updater <small>&amp; kiwi-catalog</small></h3>
               <p>Installiert und aktualisiert Open-Source-Apps aus Git-Katalogen auf Fedora Silverblue und Bluefin. Releases sind Git-Tags, Updates laufen per systemd-Timer im Hintergrund, Root-Anteile über einen polkit-geschützten Helfer – mit CLI und der GTK4-App „Kiwi Apps“.</p>
               <ul class="chips"><li>Bash</li><li>Git</li><li>systemd</li><li>polkit</li><li>Python</li><li>GTK4</li></ul>
@@ -208,7 +247,7 @@
               <img src="assets/img/kiwi/ensconce.svg" alt="" width="92" height="92" loading="lazy">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Automatisierung · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <div class="project-meta"><span>Automatisierung · Desktop</span><span class="status status--active">Aktiv · <span class="ver">v2.1.1</span></span></div>
               <h3>ensconce</h3>
               <p>Modulare Nachinstallation für Bluefin-DX: macht aus einer frischen Installation per Textlisten einen fertigen Arbeitsplatz – Pakete, Flatpaks, GNOME-Erweiterungen, Nextcloud-Sync, dconf, Anmeldebildschirm. Mit Probelauf, Fortsetzen nach Neustart und Export eines bestehenden Rechners.</p>
               <ul class="chips"><li>Bash</li><li>rpm-ostree</li><li>Flatpak</li><li>dconf</li><li>GNOME</li></ul>
@@ -236,7 +275,7 @@
               <img src="assets/img/kiwi/kiwi-cli-tools-desktop.svg" alt="" width="92" height="92" loading="lazy">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Tools · Desktop</span><span class="status status--active">Aktiv</span></div>
+              <div class="project-meta"><span>Tools · Desktop</span><span class="status status--active">Aktiv · <span class="ver">v1.0.1</span></span></div>
               <h3>kiwi-cli-tools-desktop</h3>
               <p>Drei kleine Helfer für die Kommandozeile: <code>pweb</code> teilt einen Ordner per HTTPS im LAN, <code>select-server</code> verbindet per Menü mit Hosts aus der SSH-Konfiguration, <code>tethering</code> setzt die TTL für Hotspot-Verkehr.</p>
               <ul class="chips"><li>Python</li><li>Bash</li><li>OpenSSL</li><li>SSH</li><li>iptables</li></ul>
@@ -306,11 +345,11 @@
               <img class="cover" src="assets/img/projects/enigmajs.webp" alt="EnigmaJS: verbundener Chatraum mit zwei Teilnehmern und verschlüsselten Nachrichten" width="960" height="600" loading="lazy" decoding="async">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Web-App · P2P</span><span class="status status--done">Fertig</span></div>
+              <div class="project-meta"><span>Web-App · P2P</span><span class="status status--done">In Armory</span></div>
               <h3>EnigmaJS</h3>
-              <p>Verschlüsselter, flüchtiger Gruppenchat ohne Konten: Räume per Code oder QR-Code, optional mit Passwort, Host-Rechte und Ende-zu-Ende-Verschlüsselung mit frischen Schlüsseln pro Raum. Dezentral über Gun.js-Relays – wird der Raum geschlossen, ist alles weg.</p>
+              <p>Verschlüsselter, flüchtiger Gruppenchat ohne Konten: Räume per Code oder QR-Code, optional mit Passwort, Host-Rechte und Ende-zu-Ende-Verschlüsselung mit frischen Schlüsseln pro Raum. Dezentral über Gun.js-Relays – wird der Raum geschlossen, ist alles weg. Heute Teil von Armory; der Nachfolger Uplink entsteht auf nostr.</p>
               <ul class="chips"><li>Vue 3</li><li>Pinia</li><li>Vite</li><li>Gun.js / SEA</li><li>JavaScript</li></ul>
-              <div class="project-links"><a href="https://derlocke-ng.github.io/EnigmaJS/">Live ansehen</a><a href="https://github.com/derlocke-ng/EnigmaJS">Quellcode</a></div>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/armory/enigmajs/">Live ansehen</a><a href="https://github.com/derlocke-ng/EnigmaJS">Quellcode</a></div>
             </div>
           </article>
 
@@ -320,11 +359,11 @@
               <img class="cover" src="assets/img/projects/devboard.webp" alt="DevBoard: Pinnwand mit Notizen von Freelancern und Auftraggebern" width="960" height="600" loading="lazy" decoding="async">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Web-App · P2P</span><span class="status status--done">Fertig</span></div>
+              <div class="project-meta"><span>Web-App · P2P</span><span class="status status--active">In Armory</span></div>
               <h3>DevBoard</h3>
-              <p>Serverloses Peer-to-Peer-Board für Freelancer: Beiträge und Stimmen werden im Browser mit einem eigenen Schlüsselpaar signiert und von allen Teilnehmern geprüft. Keine Konten, keine Datenbank – eine einzige HTML-Datei.</p>
-              <ul class="chips"><li>JavaScript</li><li>Gun.js / SEA</li><li>IndexedDB</li><li>GitHub Pages</li></ul>
-              <div class="project-links"><a href="https://derlocke-ng.github.io/devboard/">Live ansehen</a><a href="https://github.com/derlocke-ng/devboard">Quellcode</a></div>
+              <p>Serverloses Schwarzes Brett für Freelancer. Die erste Fassung lief als einzelne HTML-Datei auf Gun.js; heute ist DevBoard eine App in Armory auf nostr: signierte Notizen mit Proof of Work gegen Spam, Votes, Meldungen und Ablaufdatum, mit dem Konto und der Blockliste des Hubs.</p>
+              <ul class="chips"><li>React</li><li>nostr</li><li>NIP-13 / 25 / 56</li><li>Gun.js / SEA</li><li>IndexedDB</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/armory/devboard/">Live ansehen</a><a href="https://github.com/derlocke-ng/devboard">Erste Fassung</a></div>
             </div>
           </article>
 
@@ -334,11 +373,11 @@
               <img class="cover" src="assets/img/projects/pongjs.webp" alt="pongjs: laufendes Spiel im grünen Retro-Look mit Spielstand" width="960" height="600" loading="lazy" decoding="async">
             </div>
             <div class="project-body">
-              <div class="project-meta"><span>Web · Spiel</span><span class="status status--done">Fertig</span></div>
+              <div class="project-meta"><span>Web · Spiel</span><span class="status status--active">In Armory</span></div>
               <h3>pongjs</h3>
-              <p>Pong für zwei Spieler über das Netzwerk, direkt im Browser: Verbindung per WebRTC – automatisch über PeerJS oder manuell –, gezeichnet auf Canvas im Retro-Look eines Röhrenmonitors.</p>
-              <ul class="chips"><li>JavaScript</li><li>WebRTC</li><li>PeerJS</li><li>Canvas</li><li>CSS</li></ul>
-              <div class="project-links"><a href="https://github.com/derlocke-ng/pongjs">Quellcode</a></div>
+              <p>Pong für zwei Spieler über das Netzwerk, direkt im Browser: Verbindung per WebRTC, gezeichnet auf Canvas im Retro-Look eines Röhrenmonitors. In Armory als React-App mit Einladung per Link, QR-Code oder Lobby offener Spiele.</p>
+              <ul class="chips"><li>JavaScript</li><li>React</li><li>WebRTC</li><li>Canvas</li><li>Gun.js</li></ul>
+              <div class="project-links"><a href="https://derlocke-ng.github.io/armory/pongjs/">Live ansehen</a><a href="https://github.com/derlocke-ng/pongjs">Erste Fassung</a></div>
             </div>
           </article>
 

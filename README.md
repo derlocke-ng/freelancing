@@ -11,7 +11,7 @@ Drittanbieter** (Schriften lokal, keine Cookies, kein Tracking). Gebaut für **G
 ```
 index.html            Startseite: Leistungen, Hosting, Zusammenarbeit, Referenzen, Tech-Stack,
                       Arbeitsweise, Ablauf, Über mich, FAQ, Kontakt (Anfrage-Assistent)
-projekte.html         Projektübersicht mit Filter (22 Projekte)
+projekte.html         Projektübersicht mit Filter (25 Projekte)
 impressum.html        Impressum nach § 5 DDG
 datenschutz.html      Datenschutzerklärung (DSGVO, TDDDG)
 404.html              Fehlerseite für GitHub Pages

@@ -1255,6 +1255,7 @@ code, kbd, samp { font-family: var(--font-mono); font-size: .9em; }
 .status { display: inline-flex; align-items: center; gap: 6px; }
 .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
 .status--active { color: var(--accent); }
+.status .ver { text-transform: none; }
 .status--wip { color: var(--amber); }
 .status--done { color: var(--text-2); }
 .status--archive { color: var(--muted); }

@@ -148,7 +148,7 @@
     <!-- ============================== Zahlen ============================== -->
     <section class="stats" aria-label="Kurz in Zahlen">
       <div class="container stats-grid">
-        <a class="stat stat--link" href="projekte.html"><span class="stat-num">25+</span><span class="stat-label">Open-Source-Projekte, öffentlich auf GitHub</span><span class="stat-more">Alle Projekte ansehen →</span></a>
+        <a class="stat stat--link" href="projekte.html"><span class="stat-num">30+</span><span class="stat-label">Open-Source-Projekte, öffentlich auf GitHub</span><span class="stat-more">Alle Projekte ansehen →</span></a>
         <div class="stat"><span class="stat-num">3</span><span class="stat-label">Server-Plattformen vollautomatisch installiert: Fedora CoreOS, uCore, Debian</span></div>
         <div class="stat"><span class="stat-num">1 Datei</span><span class="stat-label">reicht kiwi-server, um Installationsmedien für alle Server eines Netzes zu bauen</span></div>
         <div class="stat"><span class="stat-num">0</span><span class="stat-label">Cookies, Tracker und Drittanbieter auf dieser Website</span></div>
@@ -391,11 +391,12 @@
             <ul class="checklist">
               <li>WireGuard-Mesh mit einem zentralen Zugangspunkt, Double-Hop über einen kommerziellen VPN-Anbieter, Pi-hole und Tor</li>
               <li>Eigene Zertifizierungsstelle: interne HTTPS-Dienste wie <code>cloud.sh3.home</code> ohne Browser-Warnung</li>
-              <li>Rollen für LAN-Gateways (DNS, DHCP-Relay, Download-Station, SFTP) und Cloud-Knoten (Nextcloud AIO, Vaultwarden)</li>
+              <li>Knoten als LAN-Gateway (DNS, DHCP-Relay, Download-Station, SFTP), Cloud (Nextcloud, Vaultwarden) oder eigene Modulauswahl; Dienste laufen als Podman-Quadlets unter systemd</li>
+              <li>Laufende Maschinen per SSH aktualisieren, WireGuard-Clients für Rechner, Handys und Router einrichten (mit QR-Code), Fleet-Verzeichnis verschlüsselt auf den Knoten sichern</li>
               <li>Automatische Updates auf Fedora CoreOS, uCore und Debian – Neustarts nur im gewählten Wartungsfenster</li>
             </ul>
             <ul class="chips">
-              <li>Python</li><li>Jinja2</li><li>Bash</li><li>Butane / Ignition</li><li>Debian Preseed</li><li>Docker Compose</li><li>WireGuard</li><li>Pi-hole</li><li>nginx</li><li>GTK4</li>
+              <li>Python</li><li>Jinja2</li><li>Bash</li><li>Butane / Ignition</li><li>Debian Preseed</li><li>Podman-Quadlets</li><li>WireGuard</li><li>Pi-hole</li><li>nginx</li><li>GTK4</li>
             </ul>
             <div class="case-links">
               <a class="btn btn--ghost btn--sm" href="https://github.com/derlocke-ng/kiwi-server">
@@ -463,6 +464,38 @@
             <div class="case-links">
               <a class="btn btn--ghost btn--sm" href="https://derlocke.net">Live ansehen</a>
               <a class="btn btn--ghost btn--sm" href="https://github.com/derlocke-ng/derlocke-blog">
+                <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+                Quellcode
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Armory -->
+        <article class="case" aria-labelledby="case-armory">
+          <figure class="case-media reveal">
+            <div class="shot">
+              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span><span class="shot-url">derlocke-ng.github.io/armory/loadout</span></div>
+              <img src="assets/img/projects/loadout.webp" width="960" height="600" loading="lazy" decoding="async" alt="Loadout in Armory: geteilte Einkaufsliste mit Abschnitten für Obst und Gemüse, Milchprodukte und Backwaren">
+            </div>
+            <figcaption>Loadout: eine geteilte Liste, Ende-zu-Ende-verschlüsselt und offline nutzbar.</figcaption>
+          </figure>
+          <div class="case-copy reveal">
+            <p class="case-label">Web-App · Peer-to-Peer</p>
+            <h3 id="case-armory">Armory &amp; kiwi-framework: Web-Apps ohne eigenen Server</h3>
+            <p>Armory ist eine Sammlung von Werkzeugen, die komplett im Browser laufen und über nostr-Relays synchronisieren, die der Nutzer selbst wählt. Darunter liegt kiwi-framework, eine eigene Engine für solche Hubs, die andere forken und mit eigenen Apps füllen können.</p>
+            <ul class="checklist">
+              <li>Ein Konto für alle Tools (Benutzername und Passwort oder nostr-Schlüssel), ohne Registrierungsserver; Daten werden vor dem Versand verschlüsselt</li>
+              <li>Loadout für geteilte Listen und Notizen, Payload für Dateien von Browser zu Browser, dazu DevBoard, pongjs und EnigmaJS</li>
+              <li>Installierbar als Web-App, offline nutzbar, in acht Sprachen</li>
+              <li>Dokumentiertes Protokoll, Unit- und Browser-Tests gegen lokale Relays, Build und Deployment per GitHub Actions</li>
+            </ul>
+            <ul class="chips">
+              <li>React 19</li><li>TypeScript</li><li>Vite</li><li>nostr</li><li>WebRTC</li><li>AES-GCM</li><li>Playwright</li><li>GitHub Actions</li>
+            </ul>
+            <div class="case-links">
+              <a class="btn btn--ghost btn--sm" href="https://derlocke-ng.github.io/armory/">Live ansehen</a>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/derlocke-ng/kiwi-framework">
                 <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
                 Quellcode
               </a>
@@ -546,9 +579,9 @@
             <img src="assets/img/kiwi/ensconce.svg" alt="" width="44" height="44" loading="lazy">
             <span><strong>ensconce</strong><span>Automatisches Setup für Linux-Arbeitsplätze</span></span>
           </a>
-          <a class="mini reveal" href="projekte.html#enigmajs">
-            <img class="mini-shot" src="assets/img/projects/enigmajs.webp" alt="" width="44" height="44" loading="lazy">
-            <span><strong>EnigmaJS</strong><span>Verschlüsselter P2P-Chat mit Vue 3 &amp; Gun.js</span></span>
+          <a class="mini reveal" href="projekte.html#kiwi-modules">
+            <span class="mini-icon"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7.2v9.6L12 21l8-4.2V7.2L12 3Z"/><path d="M4 7.2 12 11.4l8-4.2M12 11.4V21"/></svg></span>
+            <span><strong>kiwi-modules &amp; kiwi-stack</strong><span>Container-Stacks für einzelne Server</span></span>
           </a>
           <a class="mini reveal" href="projekte.html#mullvad-socks5">
             <span class="mini-icon"><svg class="i-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3.5v3.6h-3.6M5.5 20.5v-3.6h3.6"/></svg></span>
@@ -604,8 +637,8 @@
           </li>
           <li class="skill reveal">
             <h3>Container</h3>
-            <p class="skill-tools">Docker, Docker Compose, Podman (auch rootless), Portainer</p>
-            <p class="skill-use">Dienste als Compose-Stacks betreiben, eigene Images bauen und per GitHub Actions veröffentlichen (<a href="projekte.html#tangpod">tangpod</a>), getrennte Container-Netze mit eigener Firewall (<a href="projekte.html#kiwi-fox">kiwi-fox</a>).</p>
+            <p class="skill-tools">Docker, Docker Compose, Podman (auch rootless, Quadlets), Portainer</p>
+            <p class="skill-use">Dienste als Podman-Quadlets unter systemd oder als Compose-Stacks betreiben (<a href="projekte.html#kiwi-modules">kiwi-modules</a>), eigene Images bauen und per GitHub Actions veröffentlichen (<a href="projekte.html#tangpod">tangpod</a>), getrennte Container-Netze mit eigener Firewall (<a href="projekte.html#kiwi-fox">kiwi-fox</a>).</p>
           </li>
           <li class="skill reveal">
             <h3>Selbst gehostete Dienste</h3>
@@ -619,8 +652,8 @@
           </li>
           <li class="skill reveal">
             <h3>Automatisierung</h3>
-            <p class="skill-tools">Bash, Python, systemd-Units und -Timer, Jinja2, GitHub Actions</p>
-            <p class="skill-use">Skripte für wiederkehrende Aufgaben, Konfigurationen aus Vorlagen erzeugen, zeitgesteuerte Jobs, Builds und Tests in der CI.</p>
+            <p class="skill-tools">Bash, Python, systemd-Units und -Timer, Jinja2, GitHub Actions, pytest, shellcheck, Playwright</p>
+            <p class="skill-use">Skripte für wiederkehrende Aufgaben, Konfigurationen aus Vorlagen erzeugen, zeitgesteuerte Jobs, Builds und Tests in der CI – von geprüften Shell-Skripten bis zu Browser-Tests.</p>
           </li>
           <li class="skill reveal">
             <h3>Linux-Arbeitsplätze</h3>
@@ -634,13 +667,13 @@
           </li>
           <li class="skill reveal">
             <h3>Web-Frontend</h3>
-            <p class="skill-tools">HTML, CSS, JavaScript, Vue 3, Vite, Node.js</p>
-            <p class="skill-use">Webseiten ohne Framework und ohne Tracking, Web-Apps mit Vue, eigene Static-Site-Generatoren in Node.js und Bash.</p>
+            <p class="skill-tools">HTML, CSS, JavaScript, TypeScript, React 19, Vue 3, Vite, Node.js</p>
+            <p class="skill-use">Webseiten ohne Framework und ohne Tracking, Web-Apps mit React oder Vue, ein eigenes App-Framework (<a href="projekte.html#kiwi-framework">kiwi-framework</a>), Static-Site-Generatoren in Node.js und Bash.</p>
           </li>
           <li class="skill reveal">
             <h3>Peer-to-Peer</h3>
-            <p class="skill-tools">Gun.js (SEA), IPFS, WebRTC (PeerJS)</p>
-            <p class="skill-use">Web-Apps ohne zentralen Server: verschlüsselter Chat (<a href="projekte.html#enigmajs">EnigmaJS</a>), Pinnwand (<a href="projekte.html#devboard">DevBoard</a>), Netzwerkspiel (<a href="projekte.html#pongjs">pongjs</a>).</p>
+            <p class="skill-tools">nostr, Blossom, Gun.js (SEA), IPFS, WebRTC (PeerJS)</p>
+            <p class="skill-use">Web-Apps ohne zentralen Server: geteilte Listen und Dateiversand (<a href="projekte.html#armory">Armory</a>), verschlüsselter Chat (<a href="projekte.html#enigmajs">EnigmaJS</a>), Pinnwand (<a href="projekte.html#devboard">DevBoard</a>), Netzwerkspiel (<a href="projekte.html#pongjs">pongjs</a>).</p>
           </li>
           <li class="skill reveal">
             <h3>Desktop-Apps</h3>
